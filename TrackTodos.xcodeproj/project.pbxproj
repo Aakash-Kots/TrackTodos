@@ -36,6 +36,7 @@
 		0ED8851728B92D3000EED4A9 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8851628B92D3000EED4A9 /* Enums.swift */; };
 		0ED8851928B92E9300EED4A9 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8851828B92E9200EED4A9 /* TodoViewModel.swift */; };
 		0ED8851B28B930BA00EED4A9 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8851A28B930BA00EED4A9 /* CategoryButton.swift */; };
+		0EF7FD8F28BC8B2D002AA9BE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF7FD8E28BC8B2D002AA9BE /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		0ED8851628B92D3000EED4A9 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		0ED8851828B92E9200EED4A9 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		0ED8851A28B930BA00EED4A9 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
+		0EF7FD8E28BC8B2D002AA9BE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				0E9EA45028B8A7C50010C8CA /* Authentication */,
 				0E3CF38228B8D72B00408D72 /* NavigationBarView.swift */,
 				0E3CF38428B8D73100408D72 /* Home.swift */,
+				0EF7FD8E28BC8B2D002AA9BE /* Profile.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				0E43936028B8ADBD00C6E3B4 /* SecureTextField.swift in Sources */,
 				0ED8851B28B930BA00EED4A9 /* CategoryButton.swift in Sources */,
 				0E3CF38728B8D7C300408D72 /* AppUser.swift in Sources */,
+				0EF7FD8F28BC8B2D002AA9BE /* Profile.swift in Sources */,
 				0ED8851728B92D3000EED4A9 /* Enums.swift in Sources */,
 				0E3CF39628B8DB0E00408D72 /* AuthViewModel.swift in Sources */,
 				0ECCC11C28B93FA5005C229D /* TodoItem.swift in Sources */,

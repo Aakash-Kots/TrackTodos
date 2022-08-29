@@ -11,7 +11,7 @@ struct Home: View {
     @EnvironmentObject var todoViewModel: TodoViewModel
     @State private var selectedIndex: Int = 0
     @State private var addTodo: Bool = false
-    var categories: [String] = ["All", "School", "Shopping", "Other"]
+    
     var body: some View {
         ZStack {
             Color("Background")

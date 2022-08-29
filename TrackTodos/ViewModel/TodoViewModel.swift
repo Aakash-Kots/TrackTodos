@@ -38,7 +38,7 @@ class TodoViewModel: ObservableObject {
                 
                 let y = snapshot.data()
                 
-                let todo = Todo(uid: y["uid"] as! String, title: y["title"] as! String, description: y["description"]! as! String, category: y["category"] as! String, completed: y["completed"] != nil ? y["completed"] as! Bool : false, dateAdded: Date(timeIntervalSince1970: y["dateAdded"] as! TimeInterval), dateCompleted: nil, dateToBeCompleted: Date(timeIntervalSince1970: y["dateToBeCompleted"] as! TimeInterval))
+                let todo = Todo(uid: y["uid"] as! String, title: y["title"] as! String, description: y["description"]! as! String, category: y["category"] as! String, completed: y["completed"] != nil ? y["completed"] as! Bool : false, dateAdded: Date(timeIntervalSince1970: y["dateAdded"] as! TimeInterval), dateCompleted: y["dateCompleted"] as? Date, dateToBeCompleted: Date(timeIntervalSince1970: y["dateToBeCompleted"] as! TimeInterval))
                 
                 return todo
             })
@@ -86,6 +86,25 @@ class TodoViewModel: ObservableObject {
     
     
     func updateTodo(todo: Todo) {
-        
+        let data: [String: Any?] = ["uid": todo.uid, "title": todo.title, "description": todo.description, "category": todo.category, "completed": todo.completed, "dateAdded": todo.dateAdded.timeIntervalSince1970, "dateToBeCompleted": todo.dateToBeCompleted?.timeIntervalSince1970]
+        Firestore.firestore().collection("Users").document(Auth.auth().currentUser?.uid ?? "").collection("Todos").document(todo.uid).updateData(data) { error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            self.loadTodos()
+        }
+    }
+    
+    func deleteTodo(todoID: String) {
+        Firestore.firestore().collection("Users").document(Auth.auth().currentUser?.uid ?? "").collection("Todos").document(todoID).delete { error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            self.loadTodos()
+        }
     }
 }

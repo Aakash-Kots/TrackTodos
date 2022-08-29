@@ -37,6 +37,14 @@ struct TodoItem: View {
                         .font(.system(size: 15).bold())
                         .foregroundColor(.gray.opacity(0.8))
                     
+                    if(todo.completed) {
+                        HStack {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.green.opacity(0.7))
+                            Text(dateFormatter.string(from: todo.dateCompleted ?? Date.now))
+                        }
+                    }
+                    
                 }
                 Spacer()
                 

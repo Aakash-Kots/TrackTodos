@@ -13,7 +13,7 @@ struct AddTodoSheet: View {
     @State private var title: String = ""
     @State private var description: String = ""
     @State private var category: Int = 0
-    let categories: [String] = ["School", "Shopping", "Extras"]
+    
     @State private var date: Date = Date.now
     var body: some View {
         NavigationView{
@@ -25,11 +25,6 @@ struct AddTodoSheet: View {
                     Spacer()
                 }
                 Form {
-                    
-                    Section("Details") {
-                        TextField("Title", text: $title)
-                        TextField("Description", text: $description)
-                    }
                     Section("Category") {
                         Picker("", selection: $category) {
                             ForEach(0...categories.count-1, id:\.self) {i in
@@ -38,6 +33,12 @@ struct AddTodoSheet: View {
                         }
                         .pickerStyle(.segmented)
                     }
+                    
+                    Section("Details") {
+                        TextField("Title", text: $title)
+                        TextField("Description", text: $description)
+                    }
+                   
                     
                     Section("Finish By") {
                         DatePicker("", selection: $date)

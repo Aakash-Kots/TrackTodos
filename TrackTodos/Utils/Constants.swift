@@ -13,3 +13,4 @@ import FirebaseFirestore
 
 
 let USER_COLLECTION = Firestore.firestore().collection("Users")
+let categories: [String] = ["School", "Shopping", "Extras"]
